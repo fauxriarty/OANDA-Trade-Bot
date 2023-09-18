@@ -76,7 +76,7 @@ class TradingBot:
             signal = self.generate_signal(symbol)
             if signal:
                 self.place_order(symbol, signal)
-            time.sleep(10)  # checks every 10 seconds for a signal
+            time.sleep(15)  # checks every 15 seconds for a signal
 
     def run(self):
         symbols = ["EUR_USD", "GBP_USD", "USD_JPY"]
