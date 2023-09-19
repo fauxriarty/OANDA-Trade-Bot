@@ -2,6 +2,7 @@ import v20
 import time
 import threading
 
+
 class TradingBot:
     def __init__(self, access_token, account_id):
         self.api = v20.Context('api-fxpractice.oanda.com', '443', token=access_token)
@@ -28,7 +29,7 @@ class TradingBot:
             candles = response.get("candles", 200)
             high = max([candle.mid.h for candle in candles])
             low = min([candle.mid.l for candle in candles])
-            return (high, low)
+            return high, low
         return None, None
 
     def generate_signal(self, symbol):
